@@ -1,0 +1,32 @@
+# School Schedule Program
+
+# Define the weekly schedule
+schedule = {
+    "Monday": ["Math", "English", "Physics", "History"],
+    "Tuesday": ["Biology", "Math", "Computer Science", "Physical Education"],
+    "Wednesday": ["Chemistry", "English", "Geography", "Art"],
+    "Thursday": ["Math", "Biology", "History", "Music"],
+    "Friday": ["Physics", "Computer Science", "English", "Sports"]
+}
+
+def display_schedule(day=None):
+    if day:
+        # Show schedule for a specific day
+        subjects = schedule.get(day.capitalize())
+        if subjects:
+            print(f"\nSchedule for {day.capitalize()}:")
+            for i, subject in enumerate(subjects, start=1):
+                print(f"  Period {i}: {subject}")
+        else:
+            print("Invalid day entered.")
+    else:
+        # Show full weekly schedule
+        print("\nWeekly School Schedule:")
+        for day, subjects in schedule.items():
+            print(f"\n{day}:")
+            for i, subject in enumerate(subjects, start=1):
+                print(f"  Period {i}: {subject}")
+
+# Example usage
+display_schedule()          # Show full schedule
+display_schedule("Monday")  # Show Monday's schedule
