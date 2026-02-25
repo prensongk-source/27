@@ -1,0 +1,76 @@
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+class Player {
+public:
+    string name;
+    int skill; // 1 to 100
+
+    Player(string n, int s) : name(n), skill(s) {}
+};
+
+class Team {
+public:
+    string name;
+    vector<Player> players;
+
+    Team(string n) : name(n) {}
+
+    void addPlayer(string name, int skill) {
+        players.push_back(Player(name, skill));
+    }
+
+    int getTeamStrength() {
+        int total = 0;
+        for (auto& p : players) {
+            total += p.skill;
+        }
+        return total;
+    }
+};
+
+class Match {
+public:
+    Team team1, team2;
+
+    Match(Team t1, Team t2) : team1(t1), team2(t2) {}
+
+    void play() {
+        int strength1 = team1.getTeamStrength();
+        int strength2 = team2.getTeamStrength();
+
+        srand(time(0));
+        int score1 = rand() % (strength1 / 10 + 1);
+        int score2 = rand() % (strength2 / 10 + 1);
+
+        cout << "\nMatch Result:\n";
+        cout << team1.name << " " << score1 << " - " << score2 << " " << team2.name << endl;
+
+        if (score1 > score2)
+            cout << team1.name << " wins!\n";
+        else if (score2 > score1)
+            cout << team2.name << " wins!\n";
+        else
+            cout << "It's a draw!\n";
+    }
+};
+
+int main() {
+    Team teamA("Thunder FC");
+    teamA.addPlayer("Alex", 80);
+    teamA.addPlayer("Ben", 75);
+    teamA.addPlayer("Chris", 85);
+
+    Team teamB("Storm United");
+    teamB.addPlayer("David", 78);
+    teamB.addPlayer("Ethan", 82);
+    teamB.addPlayer("Frank", 76);
+
+    Match game(teamA, teamB);
+    game.play();
+
+    return 0;
+}
