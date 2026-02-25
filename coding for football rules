@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<string> rules = {
+        "Law 1: The Field of Play - Rectangular pitch with goal area, penalty area, and markings.",
+        "Law 2: The Ball - Must be spherical, proper size and pressure.",
+        "Law 3: Number of Players - Max 11 per team, minimum 7.",
+        "Law 4: Players’ Equipment - Jersey, shorts, socks, shin guards, boots.",
+        "Law 5: The Referee - Full authority, decisions are final.",
+        "Law 6: Assistant Referees - Help with offside, throw-ins, and fouls.",
+        "Law 7: Duration of Match - Two halves of 45 minutes plus stoppage time.",
+        "Law 8: Start and Restart of Play - Kick-off, drop ball, throw-in, goal kick, corner kick.",
+        "Law 9: Ball In and Out of Play - Out only when fully crosses goal/touch lines.",
+        "Law 10: Determining Outcome - Goal counts when ball fully crosses goal line.",
+        "Law 11: Offside - Player nearer to goal than ball and second-last defender when played.",
+        "Law 12: Fouls and Misconduct - Includes tackles, handball, violent conduct.",
+        "Law 13: Free Kicks - Direct (can score) and indirect (must touch another player).",
+        "Law 14: Penalty Kick - Awarded for fouls in penalty area, taken from penalty spot.",
+        "Law 15: Throw-In - Restart when ball crosses touchline, both hands behind head.",
+        "Law 16: Goal Kick - Restart when ball crosses goal line last touched by attacker.",
+        "Law 17: Corner Kick - Restart when ball crosses goal line last touched by defender."
+    };
+
+    cout << "⚽ Official Football (Soccer) Rules ⚽\n" << endl;
+    for (int i = 0; i < rules.size(); i++) {
+        cout << rules[i] << endl;
+    }
+
+    cout << "\nCards and Discipline:\n";
+    cout << "Yellow Card - Warning for unsporting behavior.\n";
+    cout << "Red Card - Sent off for serious foul play or two yellows.\n";
+
+    cout << "\nExtra Concepts:\n";
+    cout << "VAR - Video Assistant Referee for reviewing key decisions.\n";
+    cout << "Advantage Rule - Play continues if fouled team has better opportunity.\n";
+
+    return 0;
+}
