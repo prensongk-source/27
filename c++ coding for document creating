@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    // Create and open a text file
+    ofstream myFile("FootballRules.txt");
+
+    // Write content to the file
+    if (myFile.is_open()) {
+        myFile << "⚽ Official Football (Soccer) Rules\n\n";
+        myFile << "1. The Field of Play - Rectangular pitch with goal area, penalty area, and markings.\n";
+        myFile << "2. The Ball - Must be spherical, proper size and pressure.\n";
+        myFile << "3. Number of Players - Max 11 per team, minimum 7.\n";
+        myFile << "4. Players’ Equipment - Jersey, shorts, socks, shin guards, boots.\n";
+        myFile << "5. The Referee - Full authority, decisions are final.\n";
+        myFile << "...\n";
+        myFile << "17. Corner Kick - Restart when ball crosses goal line last touched by defender.\n";
+        myFile << "\nCards and Discipline:\n";
+        myFile << "Yellow Card - Warning for unsporting behavior.\n";
+        myFile << "Red Card - Sent off for serious foul play or two yellows.\n";
+        myFile.close();
+        cout << "Document created successfully: FootballRules.txt\n";
+    } else {
